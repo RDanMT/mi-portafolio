@@ -7,7 +7,7 @@ function App() {
   const [projects, setProjects] = useState([]);
 
   useEffect(() => {
-    axios.get('http://localhost:5000/api/projects')
+    axios.get(import.meta.env.VITE_API_URL)
       .then(response => {
         setProjects(response.data);
       })
