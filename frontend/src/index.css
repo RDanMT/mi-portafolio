@@ -1,0 +1,30 @@
+/* frontend/src/index.css */
+body {
+  margin: 0;
+  padding: 0;
+  /* Aquí está la magia: un degradado moderno y rico en tonos rojos */
+  background: linear-gradient(135deg, #8E0E00, #1F1C18);
+  /* Rojo profundo a casi negro */
+  background-attachment: fixed;
+  /* El fondo se queda quieto mientras haces scroll */
+  min-height: 100vh;
+  /* Tipografía moderna y limpia */
+  font-family: 'Inter', system-ui, Avenir, Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  color: #ffffff;
+  /* Texto base blanco para contraste */
+}
+
+/* Un pequeño truco para que el scrollbar combine */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #1F1C18;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #8E0E00;
+  border-radius: 5px;
+}

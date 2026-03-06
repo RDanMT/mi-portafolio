@@ -1,0 +1,201 @@
+/* frontend/src/App.css */
+
+/* frontend/src/App.css */
+
+/* Ajustes al contenedor principal para centrarlo */
+.portfolio-container {
+  max-width: 1100px;
+  /* <- Asegúrate de que esta línea esté aquí */
+  margin: 0 auto;
+  padding: 2rem 1rem 3rem 1rem;
+}
+
+/* --- ESTILOS DE LA PORTADA TIPO PERFIL --- */
+.hero-cover {
+  position: relative;
+  width: 100%;
+  /* Quitamos el height de aquí. Dejaremos que la imagen decida el tamaño */
+  background: linear-gradient(to right, #0a0000, #3a0000, #0a0000);
+  border-radius: 20px;
+  margin-bottom: 7rem;
+  /* Este margen empuja tus proyectos hacia abajo */
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+}
+
+/* La imagen de MERN */
+.cover-image {
+  width: 100%;
+  height: 280px;
+  /* Obligamos DIRECTAMENTE a la imagen a medir esto */
+  object-fit: cover;
+  object-position: center;
+  border-radius: 20px;
+  display: block;
+}
+
+/* Contenedor de la foto y el texto */
+.profile-section {
+  position: absolute;
+  bottom: -50px;
+  /* Hace que el avatar sobresalga hacia abajo de la portada */
+  left: 40px;
+  display: flex;
+  align-items: flex-end;
+  gap: 1.5rem;
+  z-index: 10;
+}
+
+/* El círculo del avatar */
+.profile-pic {
+  width: 130px;
+  height: 130px;
+  background: linear-gradient(135deg, #1F1C18, #3a0600);
+  border: 4px solid #8E0E00;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 4rem;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.6);
+  flex-shrink: 0;
+  /* Evita que el círculo se aplaste */
+}
+
+/* Textos sobre la portada */
+.profile-info {
+  margin-bottom: 5px;
+  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.9);
+}
+
+.profile-info h1 {
+  margin: 0;
+  font-size: 2.2rem;
+  color: #ffffff;
+  font-weight: 800;
+  letter-spacing: -1px;
+}
+
+.profile-info p {
+  margin: 0;
+  color: #ffcccb;
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+
+/* Subtítulo antes de las tarjetas (Déjalo como lo tenías) */
+.projects-header {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.projects-header p {
+  font-size: 1.2rem;
+  color: #ffcccb;
+  opacity: 0.8;
+}
+
+/* Cuadrícula (Grid) */
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 2.5rem;
+  padding: 1rem;
+}
+
+/* --- Diseño Moderno de la Tarjeta --- */
+.project-card {
+  /* Fondo oscuro semitransparente para "efecto cristal" sobre el rojo */
+  background: rgba(30, 30, 30, 0.8);
+  backdrop-filter: blur(10px);
+  /* Efecto de desenfoque moderno */
+  border-radius: 20px;
+  padding: 0;
+  /* Quitamos padding para que la imagen llegue al borde */
+  overflow: hidden;
+  /* Asegura que la imagen respete las esquinas redondeadas */
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+  transition: all 0.4s ease;
+  text-align: left;
+}
+
+/* Efecto Hover al pasar el mouse */
+.project-card:hover {
+  transform: translateY(-10px) scale(1.02);
+  box-shadow: 0 20px 40px rgba(142, 14, 0, 0.4);
+  /* Sombra roja al flotar */
+  border-color: rgba(255, 100, 100, 0.3);
+}
+
+/* Imagen del Proyecto */
+.project-card img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  border-bottom: 3px solid #8E0E00;
+  /* Una línea roja sutil debajo de la imagen */
+}
+
+/* Contenido de la tarjeta */
+.card-content {
+  padding: 1.5rem;
+}
+
+.project-card h2 {
+  margin-top: 0;
+  font-size: 1.5rem;
+  color: white;
+}
+
+.project-card p {
+  color: #cccccc;
+  line-height: 1.6;
+  font-size: 0.95rem;
+}
+
+.project-card strong {
+  color: #ff6b6b;
+  /* Color de acento rojo claro */
+}
+
+/* --- Botones y Enlaces Modernos --- */
+.links {
+  margin-top: 1.5rem;
+  display: flex;
+  gap: 1rem;
+}
+
+.links a {
+  flex: 1;
+  text-align: center;
+  padding: 0.8rem 1rem;
+  border-radius: 12px;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.9rem;
+  transition: all 0.3s ease;
+}
+
+/* Botón principal (Ver en vivo) */
+.links a:first-child {
+  background: linear-gradient(135deg, #cb2d3e, #ef473a);
+  color: white;
+  box-shadow: 0 4px 15px rgba(203, 45, 62, 0.3);
+}
+
+.links a:first-child:hover {
+  filter: brightness(1.2);
+  box-shadow: 0 6px 20px rgba(203, 45, 62, 0.5);
+}
+
+/* Botón secundario (GitHub) */
+.links a:last-child {
+  background: transparent;
+  border: 2px solid #ef473a;
+  color: #ef473a;
+}
+
+.links a:last-child:hover {
+  background: #ef473a;
+  color: white;
+}
