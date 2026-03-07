@@ -15,7 +15,7 @@ const PORT = process.env.PORT || 5000;
 const MONGO_URI = process.env.MONGO_URI;
 
 // 4. Crear una ruta de prueba básica
-app.get('/', (req, res) => {
+app.get('', (req, res) => {
     res.send('¡Hola! El servidor del portafolio está corriendo perfectamente 🚀');
 });
 
@@ -35,3 +35,6 @@ if (MONGO_URI) {
 app.listen(PORT, () => {
     console.log(`🚀 Servidor ejecutándose en http://localhost:${PORT}`);
 });
+
+// Exportar la app para que VS Code lo trate como módulo y evite el error de redeclaración de 'PORT'
+module.exports = app;
