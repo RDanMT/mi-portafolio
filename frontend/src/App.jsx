@@ -1,31 +1,35 @@
 import { useState, useEffect } from 'react';
 import axios from 'axios';
-import mernCover from './assets/MERN.png'; // Importamos tu imagen
+import mernCover from './assets/MERN.png';
 import './App.css';
 
 function App() {
   const [projects, setProjects] = useState([]);
+  const [loading, setLoading] = useState(true); // Nuevo: Estado de carga
 
   useEffect(() => {
-    axios.get(import.meta.env.VITE_API_URL) //import.meta.env.VITE_API_URL
+    // Usamos la variable de entorno que ya configuramos en Vercel
+    axios.get(import.meta.env.VITE_API_URL)
       .then(response => {
-        setProjects(response.data);
+        // Verificamos que la respuesta sea un arreglo antes de guardarla
+        if (Array.isArray(response.data)) {
+          setProjects(response.data);
+        }
+        setLoading(false);
       })
       .catch(error => {
         console.error("Error al obtener los proyectos:", error);
+        setLoading(false);
       });
   }, []);
 
   return (
     <div className="portfolio-container">
-
-      {/* --- NUEVA SECCIÓN DE PORTADA --- */}
+      {/* --- SECCIÓN DE PORTADA --- */}
       <div className="hero-cover">
         <img src={mernCover} alt="MERN Stack Cover" className="cover-image" />
-
         <div className="profile-section">
           <div className="profile-pic">
-            {/* Aquí luego puedes poner una etiqueta <img> con tu foto real */}
             <span>👨‍💻</span>
           </div>
           <div className="profile-info">
@@ -34,28 +38,33 @@ function App() {
           </div>
         </div>
       </div>
-      {/* -------------------------------- */}
 
       <div className="projects-header">
         <p>Proyectos cargados directamente desde MongoDB</p>
       </div>
 
       <div className="projects-grid">
-        {projects.map(project => (
-          <div key={project._id} className="project-card">
-            <img src={project.image} alt={project.title} />
-            <div className="card-content">
-              <h2>{project.title}</h2>
-              <p>{project.description}</p>
-              <p><strong>Tecnologías:</strong> {project.techStack.join(', ')}</p>
-
-              <div className="links">
-                <a href={project.liveLink} target="_blank" rel="noopener noreferrer">Ver Proyecto</a>
-                <a href={project.githubLink} target="_blank" rel="noopener noreferrer">GitHub</a>
+        {/* PARACAÍDAS: Si está cargando o no hay proyectos, mostramos un mensaje */}
+        {loading ? (
+          <p className="loading-text">Conectando con el servidor en Render...</p>
+        ) : projects.length > 0 ? (
+          projects.map(project => (
+            <div key={project._id} className="project-card">
+              <img src={project.image} alt={project.title} />
+              <div className="card-content">
+                <h2>{project.title}</h2>
+                <p>{project.description}</p>
+                <p><strong>Tecnologías:</strong> {project.techStack.join(', ')}</p>
+                <div className="links">
+                  <a href={project.liveLink} target="_blank" rel="noopener noreferrer">Ver Proyecto</a>
+                  <a href={project.githubLink} target="_blank" rel="noopener noreferrer">GitHub</a>
+                </div>
               </div>
             </div>
-          </div>
-        ))}
+          ))
+        ) : (
+          <p className="error-text">No se encontraron proyectos o el servidor no responde.</p>
+        )}
       </div>
     </div>
   );
