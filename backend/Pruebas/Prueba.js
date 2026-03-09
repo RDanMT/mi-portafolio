@@ -6,7 +6,7 @@ fetch('https://portafolio-rdanmt.onrender.com/api/projects', { // <--- Cambiamos
     body: JSON.stringify({
         title: "Plataforma Escolar",
         description: "Sistema de gestión educativa para el control de alumnos, maestros y calificaciones desarrollado en React.",
-        image: "https://github.com/RDanMT/mi-portafolio/blob/main/main/Kinder.jpg",
+        image: "https://raw.githubusercontent.com/RDanMT/mi-portafolio/refs/heads/main/main/Kinder.jpg",
         techStack: ["MongoDB", "Express", "React", "Node"],
         liveLink: "https://rdanmt.github.io/PlataformaEscolar/",
         githubLink: "https://github.com/RDanMT/PlataformaEscolar.git"
