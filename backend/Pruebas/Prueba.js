@@ -5,10 +5,10 @@ fetch('https://portafolio-rdanmt.onrender.com/api/projects', { // <--- Cambiamos
     },
     body: JSON.stringify({
         title: "Plataforma Escolar",
-        description: "Sistema de gestión educativa para el control de alumnos, maestros y calificaciones desarrollado en Java.",
+        description: "Sistema de gestión educativa para el control de alumnos, maestros y calificaciones desarrollado en React.",
         image: "https://images.unsplash.com/photo-1501503069356-3c6b82a17d89?q=80&w=2070",
-        techStack: ["Java", "MySQL", "JDBC", "MVC"],
-        liveLink: "https://github.com/RDanMT/PlataformaEscolar.git",
+        techStack: ["MongoDB", "Express", "React", "Node"],
+        liveLink: "https://rdanmt.github.io/PlataformaEscolar/",
         githubLink: "https://github.com/RDanMT/PlataformaEscolar.git"
     })
 })
