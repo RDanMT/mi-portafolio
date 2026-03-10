@@ -200,6 +200,92 @@
   color: white;
 }
 
+/* --- ESTILOS DE CARGA (LOADER) --- */
+.loader-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 4rem 2rem;
+  grid-column: 1 / -1;
+  /* Ocupa todo el ancho de la cuadrícula */
+}
+
+.spinner {
+  width: 60px;
+  height: 60px;
+  border: 6px solid rgba(255, 107, 107, 0.2);
+  /* Borde base semitransparente */
+  border-top: 6px solid #ff6b6b;
+  /* Lado superior rojo brillante */
+  border-right: 6px solid #ff6b6b;
+  /* Lado derecho rojo brillante para dar el efecto */
+  border-radius: 50%;
+  animation: spin 1s cubic-bezier(0.68, -0.55, 0.265, 1.55) infinite;
+  /* Movimiento más dinámico */
+  margin-bottom: 2rem;
+  box-shadow: 0 0 20px rgba(255, 107, 107, 0.4);
+  /* Resplandor más notorio */
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.loading-text {
+  font-size: 1.2rem;
+  color: #ffcccb;
+  font-weight: 600;
+  letter-spacing: 1.5px;
+  animation: pulseText 2s ease-in-out infinite;
+}
+
+@keyframes pulseText {
+
+  0%,
+  100% {
+    opacity: 0.7;
+  }
+
+  50% {
+    opacity: 1;
+    text-shadow: 0 0 12px rgba(255, 204, 203, 0.5);
+  }
+}
+
+.loading-text span {
+  animation: blinkDots 1.4s infinite both;
+  font-size: 1.4rem;
+}
+
+.loading-text span:nth-child(2) {
+  animation-delay: 0.2s;
+}
+
+.loading-text span:nth-child(3) {
+  animation-delay: 0.4s;
+}
+
+@keyframes blinkDots {
+  0% {
+    opacity: 0.2;
+  }
+
+  20% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0.2;
+  }
+}
+
 /* --- RESPONSIVIDAD (Tablets y Celulares) --- */
 @media (max-width: 768px) {
   .hero-cover {

@@ -46,7 +46,10 @@ function App() {
       <div className="projects-grid">
         {/* PARACAÍDAS: Si está cargando o no hay proyectos, mostramos un mensaje */}
         {loading ? (
-          <p className="loading-text">Conectando con el servidor en Render...</p>
+          <div className="loader-container">
+            <div className="spinner"></div>
+            <p className="loading-text">Conectando con el servidor en Render<span>.</span><span>.</span><span>.</span></p>
+          </div>
         ) : projects.length > 0 ? (
           projects.map(project => (
             <div key={project._id} className="project-card">
