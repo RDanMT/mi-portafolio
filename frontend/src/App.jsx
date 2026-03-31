@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import axios from 'axios';
-import mernCover from './assets/MERN.png';
+import mernCover from './assets/Portafolio.png';
 import './App.css';
 
 function App() {

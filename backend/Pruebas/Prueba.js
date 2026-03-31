@@ -4,12 +4,12 @@ fetch('https://portafolio-rdanmt.onrender.com/api/projects', { // <--- Cambiamos
         'Content-Type': 'application/json'
     },
     body: JSON.stringify({
-        title: "Inventario 1",
-        description: "Este proyecto tiene las bases de ✅ Semántica en HTML5 (main, aside, nav, section). ✅ Variables CSS para mantener colores y tipografías organizadas. ✅ CSS Grid para armar el diseño macro (esqueleto principal). ✅ CSS Flexbox para alinear el contenido interno (iconos, cabeceras, botones). ✅ CSS Interactivo (Checkbox Hack) para encender y apagar estilos sin escribir JavaScript. ✅ Diseño Responsivo (Media Queries) para adaptar una web normal a un celular.",
-        image: "https://raw.githubusercontent.com/RDanMT/mi-portafolio/refs/heads/main/main/inventario-1.png",
-        techStack: ["html", "css"],
-        liveLink: "https://rdanmt.github.io/Inventario-html/",
-        githubLink: "https://github.com/RDanMT/Inventario-html.git"
+        title: "Inventario 2",
+        description: "Uso de sintaxis moderna (const, let, =>) y manipulación avanzada del DOM para crear interfaces dinámicas. Incluye el procesamiento eficiente de datos con métodos de arreglos (filter, reduce), interactividad mediante eventos y persistencia local con localStorage. Todo esto se complementa con la integración de Chart.js para la visualización gráfica de la información.",
+        image: "https://raw.githubusercontent.com/RDanMT/mi-portafolio/refs/heads/main/main/inventario-2.png",
+        techStack: ["html", "css", "javascript"],
+        liveLink: "https://rdanmt.github.io/Inventario-javascript/",
+        githubLink: "https://github.com/RDanMT/Inventario-javascript.git"
     })
 })
     .then(respuesta => respuesta.json())
