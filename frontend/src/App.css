@@ -25,10 +25,7 @@
 /* La imagen de MERN */
 .cover-image {
   width: 100%;
-  height: 280px;
-  /* Obligamos DIRECTAMENTE a la imagen a medir esto */
-  object-fit: cover;
-  object-position: center;
+  height: auto; /* Mantener las proporciones originales */
   border-radius: 20px;
   display: block;
 }
