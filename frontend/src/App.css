@@ -26,8 +26,7 @@
 .cover-image {
   width: 100%;
   aspect-ratio: 820 / 312; /* Tamaño estándar de portada de Facebook */
-  object-fit: contain; /* Esto asegura que se vea toda la imagen sin recortar */
-  background: rgba(0, 0, 0, 0.4); /* Fondo suave por si sobran espacios al ajustar */
+  object-fit: fill; /* Estira la imagen para cubrir todo el espacio sin dejar bordes vacíos */
   border-radius: 20px;
   display: block;
 }
