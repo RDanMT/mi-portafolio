@@ -25,7 +25,9 @@
 /* La imagen de MERN */
 .cover-image {
   width: 100%;
-  height: auto; /* Mantener las proporciones originales */
+  aspect-ratio: 820 / 312; /* Tamaño estándar de portada de Facebook */
+  object-fit: contain; /* Esto asegura que se vea toda la imagen sin recortar */
+  background: rgba(0, 0, 0, 0.4); /* Fondo suave por si sobran espacios al ajustar */
   border-radius: 20px;
   display: block;
 }

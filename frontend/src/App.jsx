@@ -34,7 +34,7 @@ function App() {
           </div>
           <div className="profile-info">
             <h1>Mi Portafolio</h1>
-            <p>Desarrollador Web Full-Stack MERN</p>
+            <p>Desarrollador Web Full-Stack</p>
           </div>
         </div>
       </div>
